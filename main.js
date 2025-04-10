@@ -1,21 +1,31 @@
 function creategrid(size){
-    let etch_screen = document.querySelector(".screen");
+    let screen = document.querySelector(".screen");
     for (let i = 0; i < size; i++) {
-        var column  = document.createElement("div");
-        column.className = "column"; 
-        console.log(i)
-        for (let j = 0; j < size ; j++) {
-            var row  = document.createElement("div");
-            row.className = "row";
-            column.appendChild(row);
-        }
-        etch_screen.appendChild(column); 
+      let column = document.createElement("div");
+      column.classList.add("column");
+      for (let j = 1; j <= size; j++) {
+        let row = document.createElement("div");
+        row.classList.add("row");
+        row.style.border = "1px solid black";
+        column.appendChild(row);
+      }
+      screen.appendChild(column);
     }
+  }
 
+function draw(){
+    let row = document.getElementsByClassName("row");
+    for (let i = 0; i < row.length; i++) {
+        row[i].addEventListener("mouseover",black );
+        }
+}
+
+function black() {
+    this.style.backgroundColor = '#2e2b2b';
 }
 
 creategrid(16)
-
+draw()
 
 // for (let i = 0; i < 257; i++) {
 //     var column  = document.createElement("div");
