@@ -11,8 +11,7 @@ body {
 .container{
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 16px;
+    align-items: center;  
 }
 
 .screen{
@@ -31,3 +30,7 @@ body {
 .screen>div>* {
     flex: 1;
   }
+
+.resize{
+    height: 50px;
+}
